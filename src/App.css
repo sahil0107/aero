@@ -1,38 +1,187 @@
+/* App.css */
 .App {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #fde3d9; /* Set background color */
+  margin: 0; /* Reset margin */
+  padding: 0; /* Reset padding */
+}
+
+.left-section,
+.right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #fde3d9;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo img {
+  width: 500 px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.text-section {
+  padding: 20px;
+}
+
+.left-section {
+  position: relative; /* Add relative positioning */
+}
+
+.heading-text {
+  position: absolute;
+  top: 55%; /* Adjust the top value to 55% */
+  left: 50%; /* Center the text horizontally */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Center both horizontally and vertically */
+  width: 80%; /* Adjust the width as needed */
+  padding: 20px;
+  background-color: transparent;
+  color: black;
+  font-size: 55px;
+  line-height: 1.5;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.paragraph {
+  font-size: 16px;
+  font-weight: normal;
+  padding: 20px 100px;
+  margin-bottom: 140px;
+  margin-top: auto;
+  color: black;
+  line-height: 1.5;
+  text-align: left;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.right-section {
+  background-image: url("Group 2.png");
+  background-size: cover;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.navbar {
+  padding: 20px;
+  display: flex;
   align-items: center;
+  justify-content: flex-end; /* Align items to the right */
+  position: absolute;
+  top: 0;
+  right: 0; /* Stick to the right edge */
+  width: 50%; /* Set the width of the navbar */
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  display: flex; /* Display list items in a row */
+}
+
+.navbar li {
+  margin-left: 50px;
+  font-size: 20px;
+}
+
+.logo-container {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  padding: 20px;
+}
+
+.logo-container img {
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+}
+
+.navbar a {
   color: white;
+  text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.logo-container img {
+  width: 150px;
+  height: 50px;
+  margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+  .App {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .logo-container {
+    display: flex;
+    justify-content: center; /* Center logos on small screens */
+    margin-top: 20px;
+  }
+
+  .heading-text {
+    font-size: 20px;
+    margin-bottom: 200px; /* Adjust font size for smaller screens */
+  }
+
+  .paragraph {
+    margin-bottom: 100px; /* Increase margin for smaller screens */
+  }
+
+  .navbar {
+    justify-content: center; /* Center navigation items on small screens */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .logo img {
+    width: 80px; /* Adjust logo size for medium screens */
+  }
+
+  .heading-text {
+    font-size: 20px; /* Adjust font size for medium screens */
+  }
+
+  .paragraph {
+    margin-bottom: 100px; /* Adjust margin for medium screens */
+  }
+}
+
+@media (min-width: 1025px) {
+  .logo img {
+    width: 100px; /* Adjust logo size for large screens */
+  }
+
+  .heading-text {
+    font-size: 55px; /* Adjust font size for large screens */
+  }
+
+  .navbar {
+    justify-content: flex-end; /* Align navigation to the right on large screens */
   }
 }
